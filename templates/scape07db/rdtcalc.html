@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Drop Table Calculator - '07 Scape DB</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'scape07db/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'scape07db/style.css' %}">
+    <script src="{% static 'scape07db/rdtcalc.js' %}"></script>
+</head>
+
+<body onload="updateRates()">
+    <div class="container d-flex flex-column vh-100">
+        <header class="d-flex justify-content-center">
+            <nav class="text-center">
+                <span class="quill">'07 Scape DB</span>
+                <ul class="nav">
+                    <li><a class="p-2" href="/">NPC Search</a></li>
+                    <li><a class="p-2" href="/item/">Item Search</a></li>
+                    <li><a class="p-2" href="/rdtcalc/">Drop Table Calculator</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="d-flex justify-content-center">
+            <div class="text-center">
+                <h1 class="quill8 mt-3">Drop Table Calculator</h1>
+            </div>
+        </div>
+        <form onsubmit="submitForm(); return false;">
+            <div class="mb-3">
+                <label for="droptable" class="form-label">Drop table</label>
+                <select id="droptable" class="form-select" onChange="updateRates()">
+                    <option value="0">Rare drop table</option>
+                    <option value="1">Gem drop table</option>
+                    <option value="2">Mega rare drop table</option>
+                    <option value="3">Herb drop table</option>
+                    <option value="4">Rare seed drop table</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="rate" class="form-label">Rate</label>
+                <input type="text" id="rate" class="form-control" placeholder="1/128" required>
+            </div>
+            <div class="mb-3" id="dgdt">
+                <label for="gdt" class="form-label">Gem drop table rate</label>
+                <input type="text" id="gdt" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Calculate</button>
+        </form>
+        <div class="d-flex justify-content-center">
+            <table class="table table-hover w-75 mt-4">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Quantity</th>
+                        <th>Drop Rate</th>
+                        <th>Simplified Rate</th>
+                        <th>%</th>
+                    </tr>
+                </thead>
+                <tbody id="result"></tbody>
+            </table>
+        </div>
+        <footer class="mt-auto p-2 text-body-secondary text-center">
+            Send your comments to <a href="mailto:livres@tuta.io">livres@tuta.io</a>
+        </footer>
+    </div>
+</body>
+
+</html>

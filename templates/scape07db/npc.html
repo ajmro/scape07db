@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ npc.name }} - '07 Scape DB</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'scape07db/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'scape07db/style.css' %}">
+    <script src="{% static 'scape07db/script.js' %}"></script>
+</head>
+
+<body onload="fillTable()">
+    <div class="container d-flex flex-column vh-100">
+        <header class="d-flex justify-content-center">
+            <nav class="text-center">
+                <span class="quill">'07 Scape DB</span>
+                <ul class="nav">
+                    <li><a class="p-2" href="/">NPC Search</a></li>
+                    <li><a class="p-2" href="/item/">Item Search</a></li>
+                    <li><a class="p-2" href="/rdtcalc/">Drop Table Calculator</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="d-flex justify-content-center">
+            <div class="text-center">
+                <h1 class="quill8 mt-3">{{ npc.name }}</h1>
+                <span class="text-body-secondary">Combat level: {{ npc.combat_level }}</span>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center">
+            <table class="table table-hover w-75 mt-4" id="myTable">
+                <thead>
+                    <tr>
+                        <th class="pointer" onclick="sortTable(0)">Item</th>
+                        <th class="pointer" onclick="sortTable(1)">Quantity</th>
+                        <th class="pointer" onclick="sortTable(4)">Drop Rate</th>
+                        <th class="pointer" onclick="sortTable(4)">Simplified Rate</th>
+                        <th class="pointer" onclick="sortTable(4)">%</th>
+                        <th class="pointer" onclick="sortTable(5)">High Alch</th>
+                        <th class="pointer" onclick="sortTable(6)">Noted</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    {% for value in drop %}
+                    <tr>
+                        <td><a href="/item/{{ value.item.id }}/">{{ value.item}}</a></td>
+                        <td>{{ value.quantity }}</td>
+                        <td>{{ value.rate }}</td>
+                        <td></td>
+                        <td></td>
+                        <td>{{ value.item.high_alch }}</td>
+                        <td>{{ value.noted }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <footer class="mt-auto p-2 text-body-secondary text-center">
+            Send your comments to <a href="mailto:livres@tuta.io">livres@tuta.io</a>
+        </footer>
+    </div>
+</body>
+
+</html>

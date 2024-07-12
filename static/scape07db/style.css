@@ -1,0 +1,32 @@
+@font-face {
+    font-family: Plain;
+    src: url(font/Scape-Plain-12.otf);
+}
+
+@font-face {
+    font-family: Quill;
+    src: url(font/Scape-Quill.otf);
+}
+
+@font-face {
+    font-family: Quill8;
+    src: url(font/Scape-Quill-8.otf);
+}
+
+body {
+    font-family: Plain;
+    font-size: 1.4rem;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.quill8 {
+    font-family: Quill8;
+}
+
+.quill {
+    font-family: Quill;
+    font-size: 2rem;
+}
