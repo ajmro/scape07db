@@ -1,6 +1,6 @@
 # '07 Scape DB
 
-A complete 2007 RuneScape Database (Still in development!)
+A complete 2007 RuneScape Database made in Django. (Still in development!)
 
 [Online Instance](https://rsdb.glitch.me/)
 
