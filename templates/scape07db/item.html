@@ -39,7 +39,8 @@
                         <th class="pointer" onclick="sortTable(5)">Drop Rate</th>
                         <th class="pointer" onclick="sortTable(5)">Simplified Rate</th>
                         <th class="pointer" onclick="sortTable(5)">%</th>
-                        <th class="pointer" onclick="sortTable(6)">Noted</th>
+                        <th class="pointer" onclick="sortTable(6)">Units per Kill</th>
+                        <th class="pointer" onclick="sortTable(7)">Noted</th>
                     </tr>
                 </thead>
                 <tbody id="tableBody">
@@ -49,6 +50,7 @@
                         <td>{{ value.npc.combat_level }}</td>
                         <td>{{ value.quantity }}</td>
                         <td>{{ value.rate }}</td>
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td>{{ value.noted }}</td>

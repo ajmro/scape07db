@@ -1,21 +1,25 @@
 function fillTable(item = false) {
     var tb = document.getElementById("tableBody");
     tr = tb.getElementsByTagName("tr");
-    raterow = 2;
-    sraterow = 3;
-    percrow = 4;
+    ratecol = 2;
+    sratecol = 3;
+    perccol = 4;
+    qtycol = 1;
 
     if (item == true) {
-        raterow = 3;
-        sraterow = 4
-        percrow = 5;
+        ratecol = 3;
+        sratecol = 4
+        perccol = 5;
+        qtycol = 2;
     }
 
     for (i = 0; i < tr.length; i++) {
-        rate = tr[i].getElementsByTagName("td")[raterow]
-        srate = tr[i].getElementsByTagName("td")[sraterow];
-        perc = tr[i].getElementsByTagName("td")[percrow];
-        noted = tr[i].getElementsByTagName("td")[6];
+        rate = tr[i].getElementsByTagName("td")[ratecol]
+        srate = tr[i].getElementsByTagName("td")[sratecol];
+        perc = tr[i].getElementsByTagName("td")[perccol];
+        qty = tr[i].getElementsByTagName("td")[qtycol];
+        upkill = tr[i].getElementsByTagName("td")[6];
+        noted = tr[i].getElementsByTagName("td")[7];
 
         if (noted.innerHTML == "False") {
             noted.innerHTML = "";
@@ -25,6 +29,7 @@ function fillTable(item = false) {
 
         perc.innerHTML = rateSimplify(rate.innerHTML, true);
         srate.innerHTML = rateSimplify(rate.innerHTML);
+        upkill.innerHTML = unitsPerKill(rate.innerHTML, qty.innerHTML);
 
     }
 }
@@ -40,8 +45,22 @@ function rateSimplify(rate, percentage = false) {
         return "1/" + String(res);
     } else {
         var res2 = (num / den) * 100;
-        return String(roundToDecimals(res2, 3))
+        return String(roundToDecimals(res2, 3));
     }
+
+}
+
+function unitsPerKill(rate, qty){
+    var fqty = Number(qty);
+    var frac = rate.split('/');
+    var num = parseFloat(frac[0])
+    var den = parseFloat(frac[1])
+
+    if (isNaN(fqty)) {
+        var frac2 = qty.split('-');
+        fqty = Number((parseFloat(frac2[0]) + parseFloat(frac2[1])) / 2);
+    }
+    return String(roundToDecimals(((num * fqty) / den), 3));
 
 }
 
@@ -110,7 +129,7 @@ function sortTable(n, item = false) {
             }
 
             //for noted
-            if (test == 6) {
+            if (test == 7) {
                 row1 = x.innerHTML.toLowerCase();
                 row2 = y.innerHTML.toLowerCase();
             }

@@ -59,6 +59,41 @@ var tables = [
         ['Dwarf weed seed', '1', '3/238'],
         ['Torstol seed', '1', '2/238']
     ],
+
+    [
+        ['Limpwurt seed', '1', '137/1048'],
+        ['Strawberry seed', '1', '131/1048'],
+        ['Marrentil seed', '1', '125/1048'],
+        ['Jangerberry seed', '1', '92/1048'],
+        ['Tarromin seed', '1', '85/1048'],
+        ['Wildblood seed', '1', '83/1048'],
+        ['Watermelon seed', '1', '63/1048'],
+        ['Harralander seed', '1', '56/1048'],
+        ['Ranarr seed', '1', '39/1048'],
+        ['Whiteberry seed', '1', '34/1048'],
+        ['Mushroom spore', '1', '29/1048'],
+        ['Toadflax seed', '1', '27/1048'],
+        ['Belladonna seed', '1', '18/1048'],
+        ['Irit seed', '1', '18/1048'],
+        ['Poison ivy seed', '1', '13/1048'],
+        ['Avantoe seed', '1', '12/1048'],
+        ['Cactus seed', '1', '12/1048'],
+        ['Kwuarm seed', '1', '9/1048'],
+        ['Snapdragon seed', '1', '5/1048'],
+        ['Cadantine seed', '1', '4/1048'],
+        ['Lantadyme seed', '1', '3/1048'],
+        ['Dwarf weed seed', '1', '2/1048'],
+        ['Torstol seed', '1', '1/1048']
+
+    ],
+    
+    [
+        ['1/127', '1', '1/127'],
+        ['124/127', '1', '124/127'],
+        ['21/252', '1', '21/252'],
+        ['189/252', '1', '189/252']
+
+    ],
 ];
 
 function getGCD(num, den) {

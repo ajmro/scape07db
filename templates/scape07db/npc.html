@@ -39,7 +39,8 @@
                         <th class="pointer" onclick="sortTable(4)">Simplified Rate</th>
                         <th class="pointer" onclick="sortTable(4)">%</th>
                         <th class="pointer" onclick="sortTable(5)">High Alch</th>
-                        <th class="pointer" onclick="sortTable(6)">Noted</th>
+                        <th class="pointer" onclick="sortTable(6)">Units per Kill</th>
+                        <th class="pointer" onclick="sortTable(7)">Noted</th>
                     </tr>
                 </thead>
                 <tbody id="tableBody">
@@ -51,6 +52,7 @@
                         <td></td>
                         <td></td>
                         <td>{{ value.item.high_alch }}</td>
+                        <td></td>
                         <td>{{ value.noted }}</td>
                     </tr>
                     {% endfor %}
