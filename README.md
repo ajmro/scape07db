@@ -20,7 +20,7 @@ A complete 2007 RuneScape Database made in Django. (Still in development!)
 - Advanced search
 - Admin item filter
 - Template inheritance
-- Commas to big integers
+- Commas to DR and HA
 - NPC subpages for variable CLs
 
 ## Contact

@@ -42,12 +42,16 @@ function rateSimplify(rate, percentage = false) {
     if (percentage == false) {
         var res = den / num
         res = Math.round((res + Number.EPSILON) * 100) / 100
-        return "1/" + String(res);
+        return "1/" + numberWithCommas(res);
     } else {
         var res2 = (num / den) * 100;
-        return String(roundToDecimals(res2, 3));
+        return numberWithCommas(roundToDecimals(res2, 3));
     }
 
+}
+
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
 }
 
 function unitsPerKill(rate, qty){
